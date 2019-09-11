@@ -1,0 +1,42 @@
+.highlight { 
+    background: yellow;
+}
+
+.light { 
+    background-color: yellow;
+}
+
+.selectedRight {
+	border-right: 1px solid;
+	margin-right:-1px;
+	border-right-color: black;
+	animation: blinkingRight .2s infinite;
+		-webkit-animation: blinkingRight 0.3s infinite backwards alternate;
+}
+
+.selectedLeft {
+	border-left: 1px solid;
+	margin-left:-1px;
+	border-left-color: black;
+	animation: blinkingLeft .2s infinite;
+		-webkit-animation: blinkingLeft 0.3s infinite backwards alternate;
+}
+
+@-webkit-keyframes blinkingRight {
+  0%   { border-right-color: rgba(0, 0, 0, 0); }
+  100% { border-right-color: rgba(0, 0, 0, 1); }
+}
+
+@keyframes blinkingRight {
+  0%   { border-right-color: rgba(0, 0, 0, 0); }
+  100% { border-right-color: rgba(0, 0, 0, 1); }
+
+@-webkit-keyframes blinkingLeft {
+  0%   { border-left-color: rgba(0, 0, 0, 0); }
+  100% { border-left-color: rgba(0, 0, 0, 1); }
+}
+
+@keyframes blinkingLeft {
+  0%   { border-left-color: rgba(0, 0, 0, 0); }
+  100% { border-left-color: rgba(0, 0, 0, 1); }
+}

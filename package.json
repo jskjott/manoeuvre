@@ -1,0 +1,27 @@
+{
+  "name": "manoeuvre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "node_modules/.bin/eslint src --ext .ts --fix && tsc --noEmit",
+    "build:common": "mkdir build && mkdir build/public && tsc src/background.ts --outDir build && tsc src/contentScript.ts --outDir build && cp src/third-party/vue.min.js build/vue.min.js && cp src/styles.css build/styles.css",
+    "build:chrome": "rm -rf build && npm run lint && npm run build:common && json-minify src/manifest.json > build/manifest.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "0.0.88",
+    "@types/node": "^12.7.5",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "json-minify": "^1.0.0",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.3"
+  }
+}
